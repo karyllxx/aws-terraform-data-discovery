@@ -1,18 +1,21 @@
 data "aws_vpc" "selected" {
-  tags = {
-    Name = var.vpc_name
+  filter {
+    name   = "tag:Name"
+    values = [var.vpc_name]
   }
 }
 
 data "aws_subnet" "public" {
-  tags = {
-    Name = var.public_subnet_name
+  filter {
+    name   = "tag:Name"
+    values = [var.public_subnet_name]
   }
 }
 
 data "aws_security_group" "selected" {
-  tags = {
-    Name = var.security_group_name
+  filter {
+    name   = "tag:Name"
+    values = [var.security_group_name]
   }
 }
 
