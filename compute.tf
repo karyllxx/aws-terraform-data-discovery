@@ -2,7 +2,7 @@ locals {
   instance_name = "${var.project_id}-instance"
 }
 
-resource "aws_instance" "cmtr_nizsrz3k_instance" {
+resource "aws_instance" "cmtr-nizsrz3k-instance" {
   ami                    = data.aws_ami.amazon_linux_2023.id
   instance_type          = "t3.micro"
   subnet_id              = data.aws_subnet.public.id
